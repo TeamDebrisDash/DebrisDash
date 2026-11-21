@@ -5,7 +5,7 @@
 **Domains:** 01 (Indian Space Missions & Space Data) & 06 (Sustainable Space & Space Environment)
 
 ### 🚀 Play Live
-👉 **[Launch DebrisDash](https://akarshika7040.github.io/debris-dash/)**
+👉 **[Launch DebrisDash]([https://akarshika7040.github.io/debris-dash/](https://teamdebrisdash.github.io/DebrisDash/))**
 
 ### 🌍 Problem & Mission
 Over 36,000 pieces of tracked space debris hurtle around Earth at 25,000+ km/h, threatening active satellites and risking **Kessler Syndrome**—an unstoppable collision chain reaction. Inspired by **ISRO's Project NETRA** and India's **Debris-Free Space Missions (DFSM) 2030** goal, **DebrisDash** lets players command a PSLV orbital cleanup stage and inspect tracked Low Earth Orbit objects.
