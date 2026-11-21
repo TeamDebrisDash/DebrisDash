@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>DebrisDash | ISRO PSLV Orbital Cleanup</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app-container">
+    <header id="top-bar">
+      <div class="brand">🛰️ Debris<span>Dash</span> <small>ISRO DFSM 2030</small></div>
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="game-tab">PSLV Cleanup Mission</button>
+        <button class="tab-btn" data-tab="radar-tab">NETRA Live Radar</button>
+      </nav>
+    </header>
+
+    <!-- TAB 1: PSLV CLEANUP GAME -->
+    <div id="game-tab" class="tab-content active">
+      <div id="game-wrapper">
+        <canvas id="canvas"></canvas>
+
+        <div id="hud" class="hidden">
+          <div class="hud-box">
+            <div>FUEL: <span id="fuel-text">100%</span></div>
+            <div class="fuel-bar-wrap"><div id="fuel-fill"></div></div>
+          </div>
+          <div class="hud-box">
+            <div>5-STREAK REFILL (<span id="streak-text">0</span>/5)</div>
+            <div class="streak-dots">
+              <div class="dot" id="d1"></div>
+              <div class="dot" id="d2"></div>
+              <div class="dot" id="d3"></div>
+              <div class="dot" id="d4"></div>
+              <div class="dot" id="d5"></div>
+            </div>
+          </div>
+          <div class="hud-box">
+            <div>CLEARED: <span id="score-text">0</span> kg</div>
+            <div class="sub-hud">ORBIT SPEED: <span id="level-text">1.0x</span></div>
+          </div>
+        </div>
+
+        <div id="start-screen" class="overlay">
+          <div class="badge">PROJECT NETRA • DFSM 2030</div>
+          <h1>Debris<span>Dash</span></h1>
+          <p class="sub">
+            Command the <strong>PSLV Orbital Cleanup Stage</strong> in Low Earth Orbit. Capture space trash, earn 5-streak fuel refills, and prevent Kessler Syndrome!
+          </p>
+          <div class="rules">
+            <div class="rule-card"><strong>🛰️ Steer PSLV</strong>Arrow Keys, WASD, or Touch/Drag across orbit.</div>
+            <div class="rule-card"><strong>⛽ 5-in-a-Row Boost</strong>Catch 5 yellow debris pieces in a row for +35% fuel!</div>
+            <div class="rule-card"><strong>☄️ Dodge Asteroids</strong>Missing debris drains fuel; asteroids speed up every wave!</div>
+          </div>
+          <button id="start-btn" class="primary-btn">LAUNCH MISSION</button>
+          <div class="footer-note">Sources: ISRO Project NETRA, MOSDAC, Bhuvan &amp; Bhoonidhi | ASTRA 2026</div>
+        </div>
+
+        <div id="gameover-screen" class="overlay hidden">
+          <div class="badge danger">⚠️ KESSLER CHAIN REACTION TRIGGERED</div>
+          <h2 class="gameover-title">Orbit Compromised!</h2>
+          <p id="death-reason"></p>
+          <div class="impact-alert" id="impact-text"></div>
+
+          <div class="leaderboard">
+            <h3>🏆 Campus Orbit Leaderboard</h3>
+            <div id="lb-list"></div>
+          </div>
+
+          <div class="btn-row">
+            <button id="restart-btn" class="primary-btn">PLAY AGAIN</button>
+            <button id="share-btn" class="secondary-btn">📋 Share Impact Score</button>
+          </div>
+          <div class="footer-note" id="copy-msg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: ISRO NETRA LIVE RADAR -->
+    <div id="radar-tab" class="tab-content">
+      <div id="radar-wrapper">
+        <canvas id="radar-canvas"></canvas>
+        <div id="radar-panel">
+          <div class="badge">ISRO SSA • TRACKED LEO OBJECTS</div>
+          <h3>Project NETRA Orbital Monitor</h3>
+          <p class="radar-desc">Click any blip on the radar to inspect tracked Indian satellites and high-risk space debris in Low Earth Orbit (400–900 km).</p>
+          <div id="object-info" class="info-card">
+            <strong>Select an object on the radar</strong>
+            <span>Inspect altitude, velocity (km/s), and collision risk level.</span>
+          </div>
+          <div class="legend">
+            <div><span class="leg-dot green"></span> Active ISRO Satellite (MOSDAC / Bhuvan)</div>
+            <div><span class="leg-dot yellow"></span> Tracked Rocket Body / Debris</div>
+            <div><span class="leg-dot red"></span> High-Risk Shrapnel Cluster</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/radar.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
